@@ -21,15 +21,15 @@ public class Browser
         switch (browserType.toLowerCase())
         {
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\webdrivers\\chromedriver.exe");
                 driver = new ChromeDriver();
                 break;
             case "firefox":
-                System.setProperty("webdriver.gecko.driver", "src\\main\\resources\\geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver", "src\\main\\resources\\webdrivers\\geckodriver.exe");
                 driver = new FirefoxDriver();
                 break;
             case "edge":
-                System.setProperty("webdriver.edge.driver", "src\\main\\resources\\MicrosoftWebDriver.exe");
+                System.setProperty("webdriver.edge.driver", "src\\main\\resources\\webdrivers\\MicrosoftWebDriver.exe");
                 driver = new EdgeDriver();
                 break;
             default:
@@ -43,7 +43,9 @@ public class Browser
     /**
      * Maximases current browser instance
      */
-    public static void BrowserMaximize() {driver.manage().window().maximize();}
+    public static void BrowserWindowMaximize() {driver.manage().window().maximize();}
+
+    public static void BrowserOpenUrl(String url) {driver.get(url);}
 
     /**
      * Quits current browser instance
