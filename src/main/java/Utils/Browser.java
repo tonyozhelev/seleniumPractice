@@ -45,6 +45,10 @@ public class Browser
      */
     public static void BrowserWindowMaximize() {driver.manage().window().maximize();}
 
+    /**
+     * Opens a link in the browser that was set up.
+     * @param url link which should be opened
+     */
     public static void BrowserOpenUrl(String url) {driver.get(url);}
 
     /**

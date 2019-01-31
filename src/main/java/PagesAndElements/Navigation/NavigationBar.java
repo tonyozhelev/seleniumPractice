@@ -1,4 +1,4 @@
-package PagesAndElements;
+package PagesAndElements.Navigation;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -16,16 +16,16 @@ public class NavigationBar
      * @param filename name of file
      * @param delimiter delimiter of file
      * @return String[][] - first dimention - rows of file, second dimension - elements in each row
-     * @throws IOException
+     * @throws IOException thrown if file is invalid
      */
     private static String[][] getTestData(String filename, String delimiter) throws IOException {
-        List<String[]> records = new ArrayList<String[]>();
+        List<String[]> records = new ArrayList<>();
         String record;
 
         BufferedReader file = new BufferedReader(new FileReader("src\\main\\resources\\dataFiles\\" + filename));
         record = file.readLine();
         while (record != null) {
-            String[] fields = record.split(",");
+            String[] fields = record.split(delimiter);
             records.add(fields);
             record = file.readLine();
         }
@@ -39,7 +39,7 @@ public class NavigationBar
      * method for extracting data from csv file.
      * @param filename name of file
      * @return String[][] - first dimention - rows of file, second dimension - elements in each row
-     * @throws IOException
+     * @throws IOException thrown if file is invalid
      */
     private static String[][] getTestData(String filename) throws IOException {
         return getTestData(filename,",");
