@@ -87,6 +87,6 @@ public class SimpleFormDemo
             newResult.append(expectedResultArr[i]);
         }
 
-        return newResult.toString();
+        return newResult.reverse().toString();
     }
 }
