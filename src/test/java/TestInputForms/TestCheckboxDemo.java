@@ -22,6 +22,11 @@ public class TestCheckboxDemo
         CheckboxDemo.testSingleCheckbox();
     }
 
+    @Test
+    public void testMultiCheckbox()
+    {
+        CheckboxDemo.testMultiCheckbox();
+    }
 
     @AfterMethod
     public void tearDown()
